@@ -13,5 +13,8 @@
                 templateUrl: 'products/templates/product-details.html',
                 controller: 'ProductDetailsController'
             })
+            .otherwise({
+                redirectTo: '/product'
+            })
     }
 })();
