@@ -1,0 +1,29 @@
+<h1>Products</h1>
+
+<h2>Create Product</h2>
+
+<div class="input-group">
+    <input ng-model="product.name" type="text" class="form-control" placeholder="Product Name">
+            <span class="input-group-btn">
+                <button ng-click="updateProduct(product)" class="btn btn-success" type="button">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>
+                <button ng-click="addProduct(product)" class="btn btn-primary" type="button">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </span>
+</div>
+
+<h2>Product List</h2>
+
+<ul class="list-group">
+    <li ng-repeat="product in products" class="list-group-item">
+        <a href="#/product/{{product._id}}">{{product.name}}</a>
+        <a ng-click="deleteProduct(product)" class="pull-right">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+        <a ng-click="editProduct(product._id)" class="pull-right padding-20-right">
+            <span class="glyphicon glyphicon-cog"></span>
+        </a>
+    </li>
+</ul>

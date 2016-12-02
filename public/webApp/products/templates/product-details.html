@@ -1,0 +1,10 @@
+<h1>
+    <a href="#/product"><span class="glyphicon glyphicon-chevron-left"></span></a>
+    Product Details
+</h1>
+
+<label>Product Name</label>
+<input ng-model="product.name" class="form-control"/>
+<br/>
+<button ng-click="updateProduct(product)" class="btn btn-primary btn-block">Update</button>
+<button ng-click="deleteProduct(product._id)" class="btn btn-danger btn-block">Delete</button>

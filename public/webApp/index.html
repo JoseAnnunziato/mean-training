@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ProductApp">
+<head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>-->
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="products/controllers/product.controller.client.js"></script>
+    <script src="service/product.service.client.js"></script>
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .padding-20-right {
+            padding-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" ng-view>
+    </div>
+</body>
+</html>

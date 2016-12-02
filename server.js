@@ -26,4 +26,6 @@ function sayHello(req, ewq){
     ewq.send({message: 'hello from the server'});
 }
 
+require('./products/app.js')(app);
+
 app.listen(3000);
