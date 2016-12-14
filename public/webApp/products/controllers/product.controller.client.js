@@ -73,7 +73,6 @@
         
         function addProduct (product) {
             var newProduct = angular.copy(product);
-            newProduct._id = (new Date()).getTime() + '';
             ProductService
                 .createProduct(newProduct)
                 .success(findAllProducts);

@@ -3,15 +3,18 @@
 <h2>Create Product</h2>
 
 <div class="input-group">
-    <input ng-model="product.name" type="text" class="form-control" placeholder="Product Name">
-            <span class="input-group-btn">
-                <button ng-click="updateProduct(product)" class="btn btn-success" type="button">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </button>
-                <button ng-click="addProduct(product)" class="btn btn-primary" type="button">
-                    <span class="glyphicon glyphicon-plus"></span>
-                </button>
-            </span>
+    <input ng-model="product.name"
+           type="text"
+           class="form-control"
+           placeholder="Product Name">
+    <span class="input-group-btn">
+        <button ng-click="updateProduct(product)" class="btn btn-success" type="button">
+            <span class="glyphicon glyphicon-ok"></span>
+        </button>
+        <button ng-click="addProduct(product)" class="btn btn-primary" type="button">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </span>
 </div>
 
 <h2>Product List</h2>
