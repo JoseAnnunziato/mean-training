@@ -4,17 +4,30 @@
         .controller("ProductListController", productListController)
         .controller("ProductDetailsController", productDetailsController);
     
-    function productDetailsController($scope, $location, ProductService, $routeParams) {
+    function productDetailsController($scope, $location, ProductService, LessonService, $routeParams) {
         var productId = $routeParams.productId;
 
         $scope.updateProduct = updateProduct;
         $scope.deleteProduct = deleteProduct;
+        $scope.addLesson = addLesson;
+
+        LessonService
+            .findLessonsByProductId(productId)
+            .then(function(response){
+                console.log(response);
+                $scope.lessons = response.data;
+            });
 
         ProductService
             .findProductById(productId)
             .success(function (product) {
                 $scope.product = product;
             });
+        
+        function addLesson(lesson) {
+            LessonService
+                .createLessonForProduct(productId, lesson);
+        }
 
         function updateProduct(product) {
             ProductService

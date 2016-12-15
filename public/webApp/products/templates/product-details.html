@@ -5,6 +5,28 @@
 
 <label>Product Name</label>
 <input ng-model="product.name" class="form-control"/>
+<h2>Lessons</h2>
+
+<div ng-show="lessons.length == 0" class="alert alert-warning" role="alert">
+    No Lessons
+</div>
+
+
+<div class="input-group">
+    <input ng-model="lesson.name"
+           type="text"
+           class="form-control"
+           placeholder="Lesson Name">
+    <span class="input-group-btn">
+        <button ng-click="addLesson(lesson)" class="btn btn-primary" type="button">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </span>
+</div>
+
+<ul class="list-group">
+    <li ng-repeat="lesson in lessons" class="list-group-item">{{lesson.name}}</li>
+</ul>
 <br/>
 <button ng-click="updateProduct(product)" class="btn btn-primary btn-block">Update</button>
 <button ng-click="deleteProduct(product._id)" class="btn btn-danger btn-block">Delete</button>
