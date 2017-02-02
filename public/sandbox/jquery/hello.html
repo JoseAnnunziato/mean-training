@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <script>
+        (function () {
+            $(init);
+
+            function init() {
+                var allH1s = $("h1");
+                allH1s.css("color", "blue");
+
+                var allRedH1s = $("h1.red");
+                allRedH1s.css("background-color", "red");
+
+                var myUniqueYellowH1 = $("h1#yellow")
+                        .html("I feel Yellow")
+                        .css("color", "yellow")
+                        .css("background-color", "green");
+
+                var aNewH2 = "A New H2 Element";
+                var body = $("body");
+                body.append("<h2>"+aNewH2+"</h2>");
+
+                var aNewH1 = $("<h1>");
+                aNewH1.html("This is a dynamic h1 element");
+                body.append(aNewH1);
+
+                var ul = $("<ul>");
+                var li = $("<li>");
+                li.html("first line item");
+                ul.append(li);
+                body.prepend(ul);
+
+                for (var i=0; i<10; i++) {
+                    li = $("<li> Line Item " + i + "</li>");
+                    ul.append(li);
+                }
+
+                $("h1.red").remove();
+
+                $("h1").draggable();
+
+                $("ul").sortable({
+                    "axis": "y",
+                    "stop": function() {
+                        alert("sorting stopped");
+                    }
+                });
+            }
+        })();
+    </script>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <h1>Goodbye World!</h1>
+    <h1 class="red">Red H1</h1>
+    <h1 class="red">Another Red H1</h1>
+    <h1 id="yellow">My Unique Yellow H1</h1>
+</body>
+</html>

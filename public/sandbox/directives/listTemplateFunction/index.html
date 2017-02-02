@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="DirectiveDemoApp">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div ng-controller="DirectiveDemoController as model">
+
+    {{model.red}}
+
+    <h1>Directive Demo App</h1>
+    <hmh-list items="model.products" color="blue"></hmh-list>
+</div>
+
+</body>
+</html>

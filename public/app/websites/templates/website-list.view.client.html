@@ -1,0 +1,55 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container-fluid">
+    <h1>Websites</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6 col-xs-11">
+                    Name
+                </div>
+                <div class="col-xs-3 hidden-xs">
+                    Last Opened
+                </div>
+                <div class="col-xs-2 hidden-xs">
+                    Owner
+                </div>
+                <div class="col-xs-1">
+                    <span class="glyphicon glyphicon-plus pull-right"></span>
+                </div>
+            </div>
+        </li>
+        <li ng-repeat="website in websiteListModel.websites" class="list-group-item">
+            <div class="row">
+                <div class="col-sm-6 col-xs-11">
+                    <a href="#/website/{{website._id}}">
+                        {{website.name}}
+                    </a>
+                </div>
+                <div class="col-xs-3 hidden-xs">
+                    {{website.lastOpened | date}}
+                </div>
+                <div class="col-xs-2 hidden-xs">
+                    {{website.owner}}
+                </div>
+                <div class="col-xs-1">
+                    <a href="website-edit.html" class="pull-right">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    {{websiteListModel.websites}}
+
+</div>

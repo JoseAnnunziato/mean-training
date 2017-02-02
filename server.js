@@ -28,4 +28,6 @@ function sayHello(req, ewq){
 
 require('./products/app.js')(app);
 
+require('./webApp/app.js')(app);
+
 app.listen(3000);
